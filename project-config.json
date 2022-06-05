@@ -26,11 +26,11 @@
   },
   "seedPipeline": [
     {
-      "pipelineName": "simple-cicd",
-      "repository": "aws-simple-cicd",
+      "pipelineName": "aws-doe-cicd",
+      "repository": "aws-doe-cicd",
       "branch": "main",
       "type": "GitHub",
-      "owner": "awslabs",
+      "owner": "richardhu2013",
       "targets": ["cicd"]
     }
   ],
@@ -45,7 +45,7 @@
     {
       "pipelineName": "doe-saap-api",
       "repository": "doe-saap-api",
-      "branch": "feature/ticket-1234",
+      "branch": "main",
       "type": "CodeCommit",
       "owner": "doe/ddnd",
       "targets": ["dev", "test"]
@@ -56,7 +56,7 @@
       "branch": "main",
       "type": "CodeCommit",
       "owner": "doe/ddnd",
-      "targets": ["dev"]
+      "targets": ["dev", "test"]
     }
   ]
 }
