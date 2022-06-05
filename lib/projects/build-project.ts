@@ -49,10 +49,10 @@ export class BuildProject extends PipelineProject {
           //     nodejs: '14'
           //   }
           // },
-          
+
           install: {
             commands: [
-              'n 14.18.3'
+              'n 16.3.0'
             ]
           },
           build: {
