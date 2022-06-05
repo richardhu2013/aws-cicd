@@ -50,10 +50,15 @@ export class DeployProject extends PipelineProject {
           }
         },
         phases: {
+          // install: {
+          //   'runtime-versions': {
+          //     nodejs: '14'
+          //   }
+          // },
           install: {
-            'runtime-versions': {
-              nodejs: '14'
-            }
+            commands: [
+              'n 14.18.3'
+            ]
           },
           build: {
             commands: [

@@ -44,10 +44,15 @@ export class BuildProject extends PipelineProject {
           shell: 'bash'
         },
         phases: {
+          // install: {
+          //   'runtime-versions': {
+          //     nodejs: '14'
+          //   }
+          // },
           install: {
-            'runtime-versions': {
-              nodejs: '14'
-            }
+            commands: [
+              'n 14.18.3'
+            ]
           },
           build: {
             commands: [
