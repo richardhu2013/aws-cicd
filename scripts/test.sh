@@ -1,3 +1,3 @@
 #! /bin/bash
 
-echo "Nothing to test"
+echo "Nothing to test for AWS doe"
