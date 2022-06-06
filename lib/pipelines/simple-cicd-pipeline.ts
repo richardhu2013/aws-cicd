@@ -41,7 +41,7 @@
  import sns = require('@aws-cdk/aws-sns');
  import targets = require('@aws-cdk/aws-events-targets');
  
- export interface SimpleCicdPipelineProps {
+ export interface DoeCicdPipelineProps {
    artifactsBucket: IBucket
    prefix: string
    ssmRoot: string
@@ -52,8 +52,8 @@
    semverHandler: IFunction
  }
  
- export class SimpleCicdPipeline extends Pipeline {
-   constructor(scope: Construct, id: string, props: SimpleCicdPipelineProps) {
+ export class DoeCicdPipeline extends Pipeline {
+   constructor(scope: Construct, id: string, props: DoeCicdPipelineProps) {
      const {
        artifactsBucket,
        prefix,
@@ -175,7 +175,7 @@
      })
  
      // Push SemVer to Parameter Store
-     let semverParam = `${ssmRoot}/simple-cicd/${repoName}/${repoBranch}/version`
+     let semverParam = `${ssmRoot}/doe-cicd/${repoName}/${repoBranch}/version`
      new ssm.StringParameter(this, `${repoName}${repoBranch}Version`, {
        description: `Version number of ${repoName}/${repoBranch}`,
        parameterName: semverParam,

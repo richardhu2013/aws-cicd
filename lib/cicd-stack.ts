@@ -22,7 +22,7 @@ import ssm = require('@aws-cdk/aws-ssm')
 import lambda = require('@aws-cdk/aws-lambda')
 import s3deploy = require('@aws-cdk/aws-s3-deployment')
 import { Bucket } from '@aws-cdk/aws-s3'
-import { SimpleCicdPipeline } from './pipelines/simple-cicd-pipeline'
+import { DoeCicdPipeline } from './pipelines/doe-cicd-pipeline'
 import PipelineRole from './iam/pipeline-role';
 
 import { ProjectRepo } from '../config/config';
@@ -67,7 +67,7 @@ export class CicdStack extends cdk.Stack {
       const pipelineName = `${props.prefix}-${repo.pipelineName}-${repo.branch}`.replace(/\/|_/g, '-')
       const modulePipelineRole = new PipelineRole(this, `${pipelineName}PipelineRole`)
 
-      new SimpleCicdPipeline(this, `${pipelineName}`, {
+      new DoeCicdPipeline(this, `${pipelineName}`, {
         artifactsBucket,
         prefix: props.prefix,
         ssmRoot: props.ssmRoot,
