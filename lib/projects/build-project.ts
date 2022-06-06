@@ -44,12 +44,6 @@ export class BuildProject extends PipelineProject {
           shell: 'bash'
         },
         phases: {
-          // install: {
-          //   'runtime-versions': {
-          //     nodejs: '14'
-          //   }
-          // },
-
           install: {
             commands: [
               'n 16.3.0'
