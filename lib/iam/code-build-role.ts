@@ -16,9 +16,8 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-
-import iam = require('@aws-cdk/aws-iam')
-import { Construct } from '@aws-cdk/core'
+import * as iam from 'aws-cdk-lib/aws-iam';
+import { Construct } from 'constructs';
 import config from '../../config/config'
 import { StageName } from '../../config/config';
 
