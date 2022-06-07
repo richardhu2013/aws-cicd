@@ -18,7 +18,7 @@
 
 
  import { Pipeline, Artifact } from 'aws-cdk-lib/aws-codepipeline'
- import { SecretValue } from 'aws-cdk-lib/core'
+ import { SecretValue } from 'aws-cdk-lib'
  import { Construct } from 'constructs';
  import { IBucket } from 'aws-cdk-lib/aws-s3'
  import {
