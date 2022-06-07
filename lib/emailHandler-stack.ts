@@ -36,7 +36,7 @@ export class EmailHandlerStack extends cdk.Stack {
 
     // Provision Lambda
     const emailHandler = new lambda.Function(this, 'emailHandler', {
-      code: lambda.Code.asset('./lambda-helpers/email-handler'),
+      code: lambda.Code.fromAsset('./lambda-helpers/email-handler'),
       functionName: `${props.prefix}-cicd-emailHandler`,
       handler: 'lambda.send_codebuild_events_to_sns',
       runtime: lambda.Runtime.PYTHON_3_8,

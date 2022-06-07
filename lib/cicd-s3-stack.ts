@@ -21,6 +21,7 @@ import * as cdk from 'aws-cdk-lib';
 import { Bucket } from 'aws-cdk-lib/aws-s3';
 import * as ssm from 'aws-cdk-lib/aws-ssm';
 import config from '../config/config'
+import { Construct } from 'constructs';
 
 interface S3StackProps extends cdk.StackProps {
   prefix: string,
@@ -28,7 +29,7 @@ interface S3StackProps extends cdk.StackProps {
 }
 
 export class S3Stack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props: S3StackProps) {
+  constructor(scope: Construct, id: string, props: S3StackProps) {
     super(scope, id, props)
 
     const bucketName = `${props.prefix}-${config.sharedResources.cicdBucket}`
