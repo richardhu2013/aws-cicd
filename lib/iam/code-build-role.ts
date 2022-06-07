@@ -16,10 +16,10 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import * as iam from 'aws-cdk-lib/aws-iam';
-import { Construct } from 'constructs';
+import * as iam from 'aws-cdk-lib/aws-iam'
+import { Construct } from 'constructs'
 import config from '../../config/config'
-import { StageName } from '../../config/config';
+import { StageName } from '../../config/config'
 
 export interface CodeBuildRoleProps {
   stageName?: StageName

@@ -17,11 +17,11 @@
  */
 
 
-import * as cdk from 'aws-cdk-lib';
-import { Bucket } from 'aws-cdk-lib/aws-s3';
-import * as ssm from 'aws-cdk-lib/aws-ssm';
+import * as cdk from 'aws-cdk-lib'
+import { Bucket } from 'aws-cdk-lib/aws-s3'
+import * as ssm from 'aws-cdk-lib/aws-ssm'
 import config from '../config/config'
-import { Construct } from 'constructs';
+import { Construct } from 'constructs'
 
 interface S3StackProps extends cdk.StackProps {
   prefix: string,

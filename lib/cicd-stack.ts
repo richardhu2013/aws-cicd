@@ -17,15 +17,15 @@
  */
 
 
-import * as cdk from 'aws-cdk-lib';
-import * as ssm from 'aws-cdk-lib/aws-ssm';
-import * as lambda from 'aws-cdk-lib/aws-lambda';
-import * as s3deploy from 'aws-cdk-lib/aws-s3-deployment';
+import * as cdk from 'aws-cdk-lib'
+import * as ssm from 'aws-cdk-lib/aws-ssm'
+import * as lambda from 'aws-cdk-lib/aws-lambda'
+import * as s3deploy from 'aws-cdk-lib/aws-s3-deployment'
 import { Bucket } from 'aws-cdk-lib/aws-s3'
 import { DoeCicdPipeline } from './pipelines/doe-cicd-pipeline'
-import PipelineRole from './iam/pipeline-role';
-import { Construct } from 'constructs';
-import { ProjectRepo } from '../config/config';
+import PipelineRole from './iam/pipeline-role'
+import { Construct } from 'constructs'
+import { ProjectRepo } from '../config/config'
 
 interface CicdStackProps extends cdk.StackProps {
   prefix: string,
