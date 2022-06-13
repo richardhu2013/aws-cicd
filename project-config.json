@@ -57,6 +57,14 @@
       "type": "CodeCommit",
       "owner": "doe/ddnd",
       "targets": ["dev", "test"]
+    },
+    {
+      "pipelineName": "aws-web-infra",
+      "repository": "aws-web-infra",
+      "branch": "main",
+      "type": "CodeCommit",
+      "owner": "aws/awesomebuilder",
+      "targets": ["dev"]
     }
   ]
 }
