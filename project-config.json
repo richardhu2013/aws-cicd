@@ -59,8 +59,8 @@
       "targets": ["dev", "test"]
     },
     {
-      "pipelineName": "aws-web-infra",
-      "repository": "aws-web-infra",
+      "pipelineName": "ab3-spa-infra",
+      "repository": "ab3-spa-infra",
       "branch": "main",
       "type": "CodeCommit",
       "owner": "aws/awesomebuilder",
