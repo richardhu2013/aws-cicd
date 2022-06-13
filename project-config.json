@@ -65,6 +65,14 @@
       "type": "CodeCommit",
       "owner": "aws/awesomebuilder",
       "targets": ["dev"]
+    },
+    {
+      "pipelineName": "ab3-spa",
+      "repository": "ab3-spa",
+      "branch": "main",
+      "type": "CodeCommit",
+      "owner": "aws/awesomebuilder",
+      "targets": ["dev"]
     }
   ]
 }
