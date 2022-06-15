@@ -21,7 +21,8 @@ import configFile from "../project-config.json"
 
 export enum TriggerType {
   CodeCommit = "CodeCommit",
-  GitHub = "GitHub"
+  GitHub = "GitHub",
+  S3Bucket = "S3Bucket"
 }
 
 export enum Regions {
@@ -38,6 +39,8 @@ export enum StageName {
 export type ProjectRepo = {
   pipelineName: string,
   repository: string,
+  bucketName: string,
+  bucketKey: string,
   branch: string,
   type: TriggerType,
   owner?: any,

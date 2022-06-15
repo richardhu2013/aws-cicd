@@ -20,13 +20,15 @@
  import { Pipeline, Artifact } from 'aws-cdk-lib/aws-codepipeline'
  import { SecretValue } from 'aws-cdk-lib'
  import { Construct } from 'constructs'
- import { IBucket } from 'aws-cdk-lib/aws-s3'
+ import { IBucket, Bucket } from 'aws-cdk-lib/aws-s3'
  import {
    CodeBuildAction,
    CodeCommitSourceAction,
    ManualApprovalAction,
    LambdaInvokeAction,
-   GitHubSourceAction
+   GitHubSourceAction,
+   S3SourceAction,
+   S3Trigger
  } from 'aws-cdk-lib/aws-codepipeline-actions'
  import config from '../../config/config'
  import { StageName, TriggerType, ProjectRepo } from '../../config/config';
@@ -41,7 +43,8 @@
  import * as ssm from 'aws-cdk-lib/aws-ssm';
  import * as sns from 'aws-cdk-lib/aws-sns';
  import * as targets from 'aws-cdk-lib/aws-events-targets';
- 
+
+
  export interface DoeCicdPipelineProps {
    artifactsBucket: IBucket
    prefix: string
@@ -92,6 +95,21 @@
      // Source Control Stage (CodeCommit)
      const sourceOutputArtifact = new Artifact('SourceArtifact')
      switch (repo.type) {
+        case TriggerType.S3Bucket: {
+          const sourceAction = new S3SourceAction({
+            bucket: Bucket.fromBucketName(this, 'BucketByName', 'my-bucket'),
+            bucketKey: 'ddd',
+            output: sourceOutputArtifact,
+            actionName: 'S3Source',
+            trigger: S3Trigger.EVENTS,
+          })
+
+          this.addStage({
+            stageName: 'Source',
+            actions: [sourceAction]
+          })
+          break
+        }
        case TriggerType.CodeCommit: {
          const codeCommitRepo = Repository.fromRepositoryName(
            scope,

@@ -73,6 +73,16 @@
       "type": "CodeCommit",
       "owner": "aws/awesomebuilder",
       "targets": ["dev"]
+    },
+    {
+      "pipelineName": "doe-web-app-s3",
+      "repository": "doe-web-app-s3",
+      "branch": "main",
+      "type": "S3Bucket",
+      "bucketName": "awsdoebitbucketintegration",
+      "bucketKey": "bitbuckettest.zip",
+      "owner": "doe/ddnd",
+      "targets": ["dev"]
     }
   ]
 }
